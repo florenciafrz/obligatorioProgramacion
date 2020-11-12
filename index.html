@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obligatorio</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/clases.js"></script>
+    <script src="js/codigo.js"></script>
+</head>
+<body>
+    <div id="contenedor">
+
+      <div id="menuVisitante">
+        <div id="cabezal" class="clearfix">
+          <img id="logo" class="logoImg" src="imagenes/logo.jpg" alt="logo">
+          <ul id="navPrincipal">
+            <li id="mnuIngresar">
+              <a>Ingresar</a>
+            </li>
+            <li>
+              <a id="mnuRegistro">Registrarse</a>
+            </li>            
+          </ul>
+          <div id="aux">
+            <a class="submenu" id="homeVisitante">Volver a la home</a>
+          </div> 
+
+        </div><!--  FIN MENU VISITANTE --><br><br>
+      </div>
+
+      <div id="menuHuesped">
+        <div id="cabezal" class="clearfix">
+          <img id="logo" class="logoImg" src="imagenes/logo.jpg" alt="logo">
+          <ul id="navPrincipal">
+            <li id="mnuReservas">
+              <a>Mis reservas</a>
+            </li>
+            <li>
+              <a id="mnuLogoutHuesped">Cerrar sesión</a>
+            </li>
+          </ul>
+          <div id="aux">
+            <a class="submenu" id="homeHuesped">Volver a la home</a>
+          </div> 
+
+        </div><!-- FIN MENU HUESPED --><br><br>
+      </div>
+
+      <div id="menuAnfitrion">
+        <div id="cabezal" class="clearfix">
+          <img id="logo" class="logoImg" src="imagenes/logo.jpg" alt="logo">
+          <ul id="navPrincipal">
+            <li id="mnuAddInmuebles">
+              <a>Agregar inmuebles</a>
+            </li>
+            <li>
+              <a id="mnuLogoutAnfitrion">Cerrar sesión</a>
+            </li>
+          </ul>
+          <div id="aux">
+            <a class="submenu" id="homeAnfitrion">Volver a la home</a>
+          </div> 
+
+        </div><!-- FIN MENU ANFITRION --><br><br>
+      </div>
+
+      <div id="menuAdmin">
+        <div id="cabezal" class="clearfix">
+          <img id="logo" class="logoImg" src="imagenes/logo.jpg" alt="logo">
+          <ul id="navPrincipal">
+            <li id="mnuAltaAnfitrion">
+              <a>Alta anfitrión</a>
+            </li>
+            <li>
+              <a id="mnuLogoutAdmin">Cerrar sesión</a>
+            </li>
+            
+          </ul>
+          <div id="aux">
+            <a class="submenu" id="homeAdmin">Volver a la home</a>
+          </div> 
+
+        </div><!-- FIN MENU ADMIN --><br><br>
+      </div>
+
+
+
+        <div id="contenido">
+
+          <div id="login"  class="registro">
+            <p class="titulo">Ingresar</p>
+  
+              <label for="txtUsuario">Usuario:</label>
+              <input id="txtUsuario" type="text" placeholder="xxxxxx@xxxx.com"><br>
+              <label for="txtPass">Clave:</label>
+              <input id="txtPass" type="password"><br>
+              <input type="button" id="btnLogin" value="Ingresar"><br>
+              <p id="mensajesLogin"></p>
+  
+          </div>
+  
+          <div id="registroHuesped" class="registro">
+            <p class="titulo">Registro de usuario</p>
+            <form>
+            <input type="text" id="mailAlta" placeholder="correo electrónico"><br>
+            <input type="text" id="nombreAlta" placeholder="Nombre"><br>
+            <input type="text" id="apellidoAlta" placeholder="Apellido"><br>
+            <input type="number" id="celAlta" placeholder="Celular"><br>
+            <input type="password" id="passAlta" placeholder="contraseña">*<br>
+            <input type="password" id="pass2Alta" placeholder="repetir contraseña"><br>
+            <input type="button" id="btnAltaHuesped" value="Registrarse">
+            <p>*La contraseña debe ser alfanumérica y contener al menos 6 caracteres y contar con una letra mayúscula</p>
+  
+            <p id="mensajesRegistrarse"></p>
+          </form>
+          </div>
+
+          <div id="agregarInmueble">
+            <p class="titulo">Registrar un inmueble</p>
+          <form class="formulario">
+            <label for="tituloInmueble">Título:</label><br>
+            <input class="grande" type="text" id="tituloInmueble"><br>
+            <label for="ciudadInmueble">Ciudad:</label><br>
+            <input class="grande" type="text" id="ciudadInmueble"><br>
+            <label for="descripcionInmueble">Descripción:</label><br>
+            <textarea  type="text" id="descripcionInmueble"></textarea><br>
+            <label for="precioInmueble">Precio por noche en $U:</label><br>
+            <input type="number" id="precioInmueble"><br><br>
+            <label for="foto1Inmueble">Foto 1:</label>
+            <input type="file" id="foto1Inmueble"><br>
+            <label for="foto2Inmueble">Foto 2:</label>
+            <input type="file" id="foto2Inmueble"><br>
+            <label for="foto3Inmueble">Foto 3:</label>
+            <input type="file" id="foto3Inmueble"><br><br>
+
+            <input type="button" id="btnRegistroInmueble" value="Agregar">    
+            
+            <p id="mensajesRegistroInmueble"></p>
+          </form>
+          </div>
+
+          <div id="cabezalFuncionalidades">
+            <table class="tablaInmueble">
+              <tr>
+                <td><input class="grande" type="text" id="txtBuscar"><input id="btnBuscar" class="chico" type="button" value="Buscar"></td>
+                <td><select class="chico" id="txtOrdenar">
+                  <option>Calificación</option>
+                  <option>Precio</option>
+                </select><input class="chico" type="button" value="Ordenar"></td>
+
+                <td><select class="chico" id="txtMoneda">
+                  <option value="1">$UYU</option>
+                  <option value="2">U$S</option>
+                </select>
+                <input class="chico" id="btnMoneda" type="button" value="Seleccionar"></td>
+              </tr>
+            </table>
+          </div>
+
+
+          <div id="altaAnfitrion">
+            <p class="titulo">Alta de anfitrión</p>
+            <form>
+            <input type="text" id="mailAltaAnfitrion" placeholder="correo electrónico"><br>
+            <input type="text" id="nombreAltaAnfitrion" placeholder="Nombre"><br>
+            <input type="text" id="apellidoAltaAnfitrion" placeholder="Apellido"><br>
+            <input type="number" id="celAltaAnfitrion" placeholder="Celular"><br>
+            <input type="password" id="passAltaAnfitrion" placeholder="contraseña">*<br>
+            <input type="password" id="pass2AltaAnfitrion" placeholder="repetir contraseña"><br>
+            <input type="button" id="btnAltaAnfitrion" value="Registrar">
+            <p>*La contraseña debe ser alfanumérica y contener al menos 6 caracteres y contar con una letra mayúscula</p>
+  
+            <p id="mensajesAltaAnfitrion"></p>
+          </form>
+          </div>
+
+          <div id="verMas">
+            
+
+
+          </div>
+
+
+
+
+              <!--TODO EL CONTENIDO DEL ADMIN-->
+          <div id="adminContenido">
+            <h3>Ingresar cotización</h3>
+            <form action="#" method="post">
+              <input class="chico" type="number" id="txtCotizacion">
+              <input class="chico" type="button" id="btnCotizacion" value="Ingresar">
+              
+              <p id="mensajesCotizacion"></p><br><br>
+
+            </form>
+
+            <h3>Generar reporte de inmuebles</h3>
+            <form action="#" method="post">
+              <input class="chico" type="number" id="txtDesdeReporte" placeholder="desde">
+              <input class="chico" type="number" id="txtHastaReporte" placeholder="hasta">
+              <input class="chico"  type="button" id="btnRepote" value="Generar"><br><br>
+            </form>
+          </div>
+
+          <div  id="visitanteContenido">
+
+
+           <!--TODO EL CONTENIDO DEL VISITANTE-->
+           <div id="tablaInmuebles">
+
+           </div>
+              <!--FIN INMUEBLE-->
+          </div>
+
+
+          <div  id="huespedContenido">
+            <!--TODO EL CONTENIDO DEL VISITANTE-->   
+          </div>
+          
+
+
+
+          <div  id="anfitrionContenido">
+            <!--TODO EL CONTENIDO DEL Anfitrión-->
+
+
+            <div id="tablaInmueblesAnfitrion">
+
+
+            </div>
+ 
+
+        </div><!-- FIN CONTENIDO -->
+
+
+
+      </div><!-- FIN CONTENEDOR -->
+      <div id="pie">
+        <a href="https://www.ort.edu.uy">Esta página fue desarrollada por: </a>
+      </div><!-- FIN PIE -->
+
+
+    
+</body>
+</html>
